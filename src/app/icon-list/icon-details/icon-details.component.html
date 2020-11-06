@@ -1,0 +1,44 @@
+<div *ngIf="showDetails" class="icon-details">
+  <div class="icon-details__close" (click)="close()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+      <path
+        d="M12.9 1.6L8 6.6l-4.9-5-1.5 1.5 5 4.9-5 4.9 1.5 1.5 4.9-5 4.9 5 1.5-1.5-5-4.9 5-4.9z"
+      ></path>
+    </svg>
+  </div>
+  <div class="icon-details__wrap">
+    <div class="icon-details__name">{{ icon.name }}</div>
+    <div class="icon-details-image">
+      <div
+        [innerHTML]="icon.svg | sanitizeHtml"
+        class="icon-details-image__wrap"
+      ></div>
+    </div>
+    <div class="icon-details-info">
+      <div class="icon-details-info__title">Информация</div>
+      <div class="icon-details-info__content">
+        <p><b>Автор иконки:</b> Lorem Ipsum</p>
+        <p>
+          <b>Описание:</b> Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Tempora natus magni, libero aspernatur ipsa maiores harum qui
+          laudantium quod animi odio similique consectetur explicabo, fugiat
+          nam. Obcaecati repudiandae nobis quasi ducimus ipsam eum maiores unde
+          consequatur, harum rerum, a ipsum in. Laboriosam deserunt similique
+          illum id voluptas dolore tenetur excepturi magnam, aliquam ad adipisci
+          ab numquam. Adipisci, ratione mollitia suscipit nesciunt culpa
+          perferendis qui! Possimus, aperiam? Architecto sed harum odio
+          reiciendis temporibus soluta perferendis qui voluptatem. Distinctio
+          eveniet aliquam quod quas magnam perferendis tempore obcaecati
+          repellendus non aliquid harum laudantium, iure provident ullam totam
+          exercitationem nulla, vel, qui repudiandae quo!
+        </p>
+      </div>
+      <div class="icon-details-info__title">Использование</div>
+      <div class="icon-details-info__content">
+        <div class="icon-details-info__code">
+          {{ icon.svg }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

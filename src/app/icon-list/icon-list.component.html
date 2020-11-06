@@ -1,0 +1,71 @@
+<section>
+  <z-spinner [hidden]="showSpinner"></z-spinner>
+  <div class="icon-list">
+    <div class="container">
+      <div class="icon-list-search">
+        <input
+          type="search"
+          [(ngModel)]="searchPhrase"
+          class="icon-list-search__input"
+          placeholder="Search icons"
+        />
+      </div>
+      <div class="icon-list-colors">
+        <button
+          *ngFor="let button of colorButtons"
+          class="icon-list-colors__btn"
+          [style.background]="button.color"
+          (click)="changeColor(button.color)"
+        >
+          {{ button.name }}
+        </button>
+      </div>
+      <div class="icon-list-size">
+        <select class="icon-list-size__select" [(ngModel)]="selectedSize">
+          <option value="0">all</option>
+          <option *ngFor="let size of sizes" value="{{ size }}">
+            {{ size }}
+          </option>
+        </select>
+      </div>
+      <app-accordion>
+        <app-accordion-item
+          *ngFor="let iconList of groupedIcons | filter_size: selectedSize"
+          [title]="'Size ' + iconList.width"
+          [opened]="iconList.opened"
+        >
+          <div class="icon-list-group__items">
+            <div
+              *ngFor="let icon of iconList.icons | filter_name: searchPhrase"
+              class="icon-list-item"
+            >
+              <div class="icon-list-item__wrap" (click)="iconDetails(icon)">
+                <div class="icon-list-item-image">
+                  <div
+                    [innerHTML]="icon.svg | sanitizeHtml"
+                    class="icon-list-item-image__wrap"
+                  ></div>
+                </div>
+                <div class="icon-list-item__name">
+                  {{ icon.name }}
+                </div>
+              </div>
+            </div>
+            <div class="icon-list-item--clearfix"></div>
+            <div class="icon-list-item--clearfix"></div>
+            <div class="icon-list-item--clearfix"></div>
+            <div class="icon-list-item--clearfix"></div>
+            <div class="icon-list-item--clearfix"></div>
+            <div class="icon-list-item--clearfix"></div>
+          </div>
+        </app-accordion-item>
+      </app-accordion>
+    </div>
+  </div>
+
+  <app-icon-details
+    [showDetails]="showDetails"
+    [icon]="detailsIcon"
+    (closeDetails)="closeDetails()"
+  ></app-icon-details>
+</section>

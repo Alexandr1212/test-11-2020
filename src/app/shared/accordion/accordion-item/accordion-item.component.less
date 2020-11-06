@@ -1,0 +1,28 @@
+.accordion-item {
+  &__btn {
+    font-size: 30px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding: 10px 50px 10px 0;
+    cursor: pointer;
+    position: relative;
+
+    &--opened {
+      svg {
+        transform: scale(2) rotate(180deg) !important;
+      }
+    }
+
+    svg {
+      position: absolute;
+      right: 25px;
+      width: 8px;
+      height: 8px;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      transform: scale(2);
+      pointer-events: none;
+    }
+  }
+}
