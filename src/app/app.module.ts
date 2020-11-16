@@ -10,8 +10,7 @@ import { FilterSizePipe } from './shared/pipes/filter-size.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { IconDetailsComponent } from './icon-list/icon-details/icon-details.component';
-import { AccordionComponent } from './shared/accordion/accordion.component';
-import { AccordionItemComponent } from './shared/accordion/accordion-item/accordion-item.component';
+import { AccordionItemComponent } from './shared/accordion-item/accordion-item.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 @NgModule({
@@ -22,7 +21,6 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     FilterNamePipe,
     FilterSizePipe,
     IconDetailsComponent,
-    AccordionComponent,
     AccordionItemComponent,
     SpinnerComponent,
   ],

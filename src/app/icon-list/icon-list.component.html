@@ -28,7 +28,8 @@
           </option>
         </select>
       </div>
-      <app-accordion>
+
+      <div class="accordion">
         <app-accordion-item
           *ngFor="let iconList of groupedIcons | filter_size: selectedSize"
           [title]="'Size ' + iconList.width"
@@ -59,7 +60,7 @@
             <div class="icon-list-item--clearfix"></div>
           </div>
         </app-accordion-item>
-      </app-accordion>
+      </div>
     </div>
   </div>
 
